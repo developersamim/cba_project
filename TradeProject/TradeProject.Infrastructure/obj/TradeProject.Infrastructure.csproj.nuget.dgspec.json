@@ -4,14 +4,14 @@
     "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Infrastructure/TradeProject.Infrastructure.csproj": {}
   },
   "projects": {
-    "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Infrastructure/TradeProject.Infrastructure.csproj": {
+    "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/TradeProject.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Infrastructure/TradeProject.Infrastructure.csproj",
-        "projectName": "TradeProject.Infrastructure",
-        "projectPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Infrastructure/TradeProject.Infrastructure.csproj",
+        "projectUniqueName": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/TradeProject.Domain.csproj",
+        "projectName": "TradeProject.Domain",
+        "projectPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/TradeProject.Domain.csproj",
         "packagesPath": "/Users/samimahmed/.nuget/packages/",
-        "outputPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Infrastructure/obj/",
+        "outputPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -47,6 +47,79 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Infrastructure/TradeProject.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Infrastructure/TradeProject.Infrastructure.csproj",
+        "projectName": "TradeProject.Infrastructure",
+        "projectPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Infrastructure/TradeProject.Infrastructure.csproj",
+        "packagesPath": "/Users/samimahmed/.nuget/packages/",
+        "outputPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/samimahmed/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/TradeProject.Domain.csproj": {
+                "projectPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/TradeProject.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
