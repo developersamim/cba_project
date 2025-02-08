@@ -1,0 +1,6 @@
+@TradeProject.API_HostAddress = http://localhost:5078
+
+GET {{TradeProject.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

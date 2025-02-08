@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "eu1bFjc394Y=",
+  "success": true,
+  "projectFilePath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.API/TradeProject.API.csproj",
+  "expectedPackageFiles": [
+    "/Users/samimahmed/.nuget/packages/microsoft.aspnetcore.openapi/9.0.1/microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
+    "/Users/samimahmed/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
