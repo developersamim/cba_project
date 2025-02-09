@@ -3,7 +3,7 @@ using TradeProject.Core.Contracts.Persistence;
 using TradeProject.Domain;
 
 namespace TradeProject.Core.Features.Accounts.Commands.CreateAccount;
-public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand>
+public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand, Guid>
 {
     private readonly IAccountRepository _accountRepository;
     private readonly IUnitOfWork _unitOfWork;
@@ -14,9 +14,8 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand>
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<Unit> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
+    public async Task<Guid> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
     {
-        throw new Exception();
         var accountEntity = new AccountEntity
         {
             FirstName = request.FirstName,
@@ -26,11 +25,6 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand>
         await _accountRepository.AddAsync(accountEntity);
         await _unitOfWork.SaveChangesAsync();
 
-        return Unit.Value;
-    }
-
-    Task IRequestHandler<CreateAccountCommand>.Handle(CreateAccountCommand request, CancellationToken cancellationToken)
-    {
-        return Handle(request, cancellationToken);
+        return accountEntity.Id;
     }
 }
