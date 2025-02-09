@@ -112,7 +112,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/TradeProject.Domain.csproj": {
+                "projectPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/TradeProject.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -131,6 +135,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.4.1, )"
@@ -245,6 +257,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Core/TradeProject.Core.csproj": {
+                "projectPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Core/TradeProject.Core.csproj"
+              },
               "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/TradeProject.Domain.csproj": {
                 "projectPath": "/Users/samimahmed/Documents/projects/cba_project/TradeProject/TradeProject.Domain/TradeProject.Domain.csproj"
               }

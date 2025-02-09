@@ -5,9 +5,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3"/>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TradeProject.Domain\TradeProject.Domain.csproj"/>
+    <ProjectReference Include="..\TradeProject.Domain\TradeProject.Domain.csproj" />
+    <ProjectReference Include="..\TradeProject.Core\TradeProject.Core.csproj" />
   </ItemGroup>
 </Project>

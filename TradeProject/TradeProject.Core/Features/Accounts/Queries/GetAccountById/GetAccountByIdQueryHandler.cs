@@ -1,24 +1,29 @@
+using AutoMapper;
 using MediatR;
+using TradeProject.Core.Contracts.Persistence;
 using TradeProject.Core.DTO;
+using TradeProject.Core.Exceptions;
 
-namespace TradeProject.Core.Features.Accounts.Queries.GetAccountById
+namespace TradeProject.Core.Features.Accounts.Queries.GetAccountById;
+public class GetAccountByIdQueryHandler : IRequestHandler<GetAccountByIdQuery, AccountDto>
 {
-    public class GetAccountByIdQueryHandler : IRequestHandler<GetAccountByIdQuery, AccountDto>
+    private readonly IAccountRepository _accountRepository;
+    private readonly IMapper _mapper;
+    public GetAccountByIdQueryHandler(IAccountRepository accountRepository, IMapper mapper)
     {
-        public GetAccountByIdQueryHandler()
-        {
+        _accountRepository = accountRepository;
+        _mapper = mapper;
+    }
 
-        }
+    public async Task<AccountDto> Handle(GetAccountByIdQuery request, CancellationToken cancellationToken)
+    {
+        var account = await _accountRepository.GetByIdAsync(request.Id);
 
-        public async Task<AccountDto> Handle(GetAccountByIdQuery request, CancellationToken cancellationToken)
-        {
+        if (account == null)
+            throw new AccountNotFoundException(request.Id);
 
-            return new AccountDto
-            {
-                Id = Guid.NewGuid(),
-                FirstName = "heeeroine",
-                LastName = "angry girl"
-            };
-        }
+        var accountDto = _mapper.Map<AccountDto>(account);
+
+        return accountDto;
     }
 }
