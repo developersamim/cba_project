@@ -1,5 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using TradeProject.Core.Exceptions;
+using TradeProject.Core.Features.Accounts.Commands.CreateAccount;
 using TradeProject.Core.Features.Accounts.Queries.GetAccountById;
 using TradeProject.Core.Features.Accounts.Queries.GetAccounts;
 
@@ -27,9 +29,42 @@ public class AccountController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetAccount(Guid id)
     {
-        var query = new GetAccountByIdQuery { Id = id };
-        var result = await _mediator.Send(query);
+        if (id == Guid.Empty)
+            return BadRequest("Invalid id provided");
+        try
+        {
+            var query = new GetAccountByIdQuery { Id = id };
+            var result = await _mediator.Send(query);
 
-        return Ok(result);
+            return Ok(result);
+        }
+        catch (AccountNotFoundException)
+        {
+            return NotFound();
+        }
+        catch (Exception)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateAccount([FromBody] CreateAccountCommand request)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest();
+        }
+
+        try
+        {
+            await _mediator.Send(request);
+
+            return Ok();
+        }
+        catch (Exception)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
     }
 }

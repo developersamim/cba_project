@@ -6,5 +6,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="12.4.1"/>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"/>
+    <PackageReference Include="AutoMapper" Version="12.0.1"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TradeProject.Domain\TradeProject.Domain.csproj"/>
   </ItemGroup>
 </Project>
