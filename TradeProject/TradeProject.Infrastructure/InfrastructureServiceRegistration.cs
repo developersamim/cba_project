@@ -17,6 +17,7 @@ public static class InfrastructureServiceRegistration
         //services.AddSingleton<DatabaseContextFactory>(new DatabaseContextFactory(configureDbContext));
 
         services.AddScoped<IAccountRepository, AccountRepository>();
+        services.AddScoped<ITradeRepository, TradeRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork<DatabaseContext>>();
 
         // Create database and tables from code

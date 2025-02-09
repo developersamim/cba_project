@@ -23,6 +23,11 @@ public class BaseRepository<T> : IRepository<T> where T : class
         return await _context.Set<T>().FindAsync(id);
     }
 
+    public async Task<IEnumerable<T>> SearchAsync(IQueryable<T> query)
+    {
+        return await query.ToListAsync();
+    }
+
     public async Task AddAsync(T entity)
     {
         await _context.Set<T>().AddAsync(entity);
@@ -40,5 +45,10 @@ public class BaseRepository<T> : IRepository<T> where T : class
         {
             _context.Set<T>().Remove(entity);
         }
+    }
+
+    public IQueryable<T> GetQueryable()
+    {
+        return _context.Set<T>();
     }
 }
