@@ -72,3 +72,22 @@ Follow below steps to setup and run PostfreSQL using Docker
    http://localhost:5078/index.html
    ```
    ![alt text](image.png)
+
+### 3. Running tests
+
+1. **All tests running successfully**:
+   ![alt text](image-5.png)
+
+### 4. Running endpoints
+
+1. **Create Account**:
+   ![alt text](image-1.png)
+
+2. **Search Account**:
+   ![alt text](image-2.png)
+
+3. **Place Trade**:
+   ![alt text](image-3.png)
+
+4. **Update Trade Status**:
+   ![alt text](image-4.png)
