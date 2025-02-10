@@ -35,15 +35,15 @@ Follow below steps to setup and run PostfreSQL using Docker
 
    ```sh
    docker run --name my_postgres -e POSTGRES_DB=tradedatabase -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword123 -P 5433:5432 -d postgres
-
-   **I am running PostgreSQL on 5433**
-
    ```
 
 3. **Verify the PostgreSQL container is running**:
+
    ```sh
    docker ps
    ```
+
+   **I am running PostgreSQL on 5433**
 
 ### 2. Running the .NET API
 
@@ -55,10 +55,12 @@ Follow below steps to setup and run PostfreSQL using Docker
    ```
 
 2. **Restore project dependencies**:
+
    ```sh
    dotnet restore
 
    ```
+
 3. **Run the .NET API**:
    ```sh
    dotnet run
