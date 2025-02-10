@@ -21,7 +21,7 @@ public class DeleteAccountCommandHandler : IRequestHandler<DeleteAccountCommand>
         if (account == null)
             throw new AccountNotFoundException(request.Id);
 
-        await _accountRepository.DeleteAsync(request.Id);
+        await _accountRepository.DeleteAsync(account);
         await _unitOfWork.SaveChangesAsync();
     }
 }

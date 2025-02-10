@@ -23,6 +23,7 @@ public class GetAccountsQueryHandler : IRequestHandler<GetAccountsQuery, IEnumer
 
         var result = _mapper.Map<IEnumerable<AccountDto>>(accounts);
 
+
         return result;
     }
 }
