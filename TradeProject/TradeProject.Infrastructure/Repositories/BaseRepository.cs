@@ -18,7 +18,7 @@ public class BaseRepository<T> : IRepository<T> where T : class
         return await _context.Set<T>().ToListAsync();
     }
 
-    public async Task<T> GetByIdAsync(Guid id)
+    public async Task<T?> GetByIdAsync(Guid id)
     {
         return await _context.Set<T>().FindAsync(id);
     }
@@ -38,13 +38,9 @@ public class BaseRepository<T> : IRepository<T> where T : class
         _context.Set<T>().Update(entity);
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(T entity)
     {
-        var entity = await GetByIdAsync(id);
-        if (entity != null)
-        {
-            _context.Set<T>().Remove(entity);
-        }
+        _context.Set<T>().Remove(entity);
     }
 
     public IQueryable<T> GetQueryable()
