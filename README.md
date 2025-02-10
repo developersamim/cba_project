@@ -34,7 +34,7 @@ Follow below steps to setup and run PostfreSQL using Docker
 2. **Run the PostgreSQL container**:
 
    ```sh
-   docker run --name my_postgres -e POSTGRES_DB=tradedatabase -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword123 -P 5433:5432 -d postgres
+   docker run --name my_postgres -e POSTGRES_DB=tradedatabase -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword123 -p 5433:5432 -d postgres
    ```
 
 3. **Verify the PostgreSQL container is running**:
@@ -50,7 +50,7 @@ Follow below steps to setup and run PostfreSQL using Docker
 1. **Navigate to the project directory**:
 
    ```sh
-   cd cba_project/TradeProject/TradeProject.API
+   cd TradeProject/TradeProject.API
 
    ```
 
@@ -62,6 +62,13 @@ Follow below steps to setup and run PostfreSQL using Docker
    ```
 
 3. **Run the .NET API**:
+
    ```sh
    dotnet run
    ```
+
+4. **Go to the below url to see the Swagger page**:
+   ```sh
+   http://localhost:5078/index.html
+   ```
+   ![alt text](image.png)
