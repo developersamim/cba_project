@@ -50,7 +50,7 @@ Follow below steps to setup and run PostfreSQL using Docker
 1. **Navigate to the project directory**:
 
    ```sh
-   cd cba_project/TradeProject/TradeProject.API
+   cd TradeProject/TradeProject.API
 
    ```
 
@@ -62,6 +62,13 @@ Follow below steps to setup and run PostfreSQL using Docker
    ```
 
 3. **Run the .NET API**:
+
    ```sh
    dotnet run
    ```
+
+4. **Go to the below url to see the Swagger page**:
+   ```sh
+   http://localhost:5078/index.html
+   ```
+   ![alt text](image.png)
